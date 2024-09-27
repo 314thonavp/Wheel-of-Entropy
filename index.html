@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheel of Entropy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="title-container">
+        <h1 class="title">Wheel of Entropy</h1>
+    </div>
+    <div class="pointer"></div>
+    <div class="main-circle" id="wheel">
+        <div class="line" style="transform: rotate(0deg);"></div>
+        <div class="line" style="transform: rotate(72deg);"></div>
+        <div class="line" style="transform: rotate(144deg);"></div>
+        <div class="line" style="transform: rotate(216deg);"></div>
+        <div class="line" style="transform: rotate(288deg);"></div>
+        <div class="small-circle">
+            <img src="AP_LOGO.png" alt="Logo" class="logo">
+        </div>
+        <div class="segment" style="transform: rotate(0deg);"><div class="segment-text">Supply Chain</div></div>
+        <div class="segment" style="transform: rotate(72deg);"><div class="segment-text">Quality Assurance</div></div>
+        <div class="segment" style="transform: rotate(144deg);"><div class="segment-text">Process Development</div></div>
+        <div class="segment" style="transform: rotate(216deg);"><div class="segment-text">Quality Control</div></div>
+        <div class="segment" style="transform: rotate(288deg);"><div class="segment-text">Manufacturing</div></div>
+    </div>
+    <div id="result" class="result-text"></div>
+    <canvas id="fireworks" class="hidden"></canvas>
+    <button class="spin-button" id="spin-button">Spin</button>
+    <div id="goodbye-message" class="hidden">
+        <img src="AP_LOGO.png" alt="Logo" class="goodbye-logo">
+        <span class="goodbye-text">Have a great day everyone!</span>
+        <img src="AP_LOGO.png" alt="Logo" class="goodbye-logo">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

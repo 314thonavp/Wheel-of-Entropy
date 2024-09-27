@@ -1,0 +1,194 @@
+body {
+    background-color: #005f6b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Add this to prevent scrollbars during the fireworks display */
+}
+
+.title-container {
+    position: relative;
+    display: inline-block;
+}
+
+.title {
+    color: #fafafa;
+    font-size: 3em;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 4px solid #ffffff; /* Outer border */
+    position: relative;
+}
+
+.title::before,
+.title::after {
+    content: '';
+    position: absolute;
+    border: 2px solid #000000; /* Inner border */
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    pointer-events: none; /* Ensure the inner box does not interfere with interactions */
+}
+
+.title::after {
+    border: 2px solid #000000; /* Inner border */
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+}
+
+
+
+.main-circle {
+    position: relative;
+    width: 75vw;
+    height: 75vw;
+    max-width: 75vh;
+    max-height: 75vh;
+    border: 5px solid #000000;
+    background-color: #085875;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s linear;
+}
+
+.small-circle {
+    width: 25vw;
+    height: 25vw;
+    max-width: 25vh;
+    max-height: 25vh;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    width: 80%;
+    height: auto;
+}
+
+.line {
+    position: absolute;
+    width: 37.5vw; /* Length from the outer edge to the center of the small circle */
+    max-width: 37.5vh;
+    height: 5px;
+    background-color: #ffffff;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0% 50%;
+}
+
+.segment {
+    position: absolute;
+    width: 37.5vw;
+    max-width: 37.5vh;
+    height: 2px;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0% 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.segment-text {
+    position: absolute;
+    transform: translateX(-100%) translateY(-150%);
+    color: #fdfdfd;
+    font-size: 2.2em;
+    text-align: center;
+    width: 10vw;
+    max-width: 10vh;
+}
+
+.result-text {
+    position: absolute;
+    top: calc(50% - 37.5vw / 2 - 50px); /* Position above the small circle */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #00ff9d;
+    font-size: 4em;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s;
+    text-shadow: 0 8px 16px rgb(255, 255, 255);
+}
+
+.spin-button {
+    margin-top: 20px;
+    padding: 20px 40px;
+    font-size: 1.2em;
+    color: #000000;
+    background-color: #00ffea;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.spin-button:hover {
+    background-color: #e0e0e0;
+}
+
+.hidden {
+    display: none;
+}
+
+#fireworks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none; /* Allow clicks through the canvas */
+}
+
+#goodbye-message {
+    position: absolute;
+    top: calc(50% + 37.5vw / 2 - 40px); /* Position below the small circle */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #00e2aa;
+    font-size: 3em;
+    text-align: center;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    text-shadow: 0 8px 16px rgb(255, 255, 255);
+}
+
+.goodbye-logo {
+    width: 100px;
+    height: auto;
+    margin: 0 20px;
+}
+
+.goodbye-text {
+    font-size: 2em;
+    margin: 0 20px;
+}
+
+.fade-in {
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
